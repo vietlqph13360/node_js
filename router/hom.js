@@ -1,6 +1,7 @@
-const express = require("express");
-const route = express.Router();
-route.get("/", (request, response) => {
+// const express = require("express");
+import express from "express";
+const Homeroute = express.Router();
+Homeroute.get("/", (request, response) => {
     response.send(`
     
     <h1>Hom page</h1>
@@ -12,4 +13,4 @@ route.get("/", (request, response) => {
 
 
 
-module.exports = route;
+export default Homeroute
