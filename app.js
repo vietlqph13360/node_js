@@ -12,14 +12,12 @@
 import express from "express";
 import Homeroute from "./router/hom";
 import Productroute from "./router/products";
-import Product_detail from "./router/product_detail";
 
 
 const app = express();
 app.use(express.json());
 app.use(Homeroute);
 app.use(Productroute);
-app.use(Product_detail);
 
 
 
