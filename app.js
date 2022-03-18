@@ -9,6 +9,7 @@
 // app.use(productRoute);
 // const productDetailRoute = require("./router/product_detail")
 // app.use(productDetailRoute);
+import mongoose from "mongoose";
 import express from "express";
 import Homeroute from "./router/hom";
 import Productroute from "./router/products";
@@ -19,7 +20,7 @@ app.use(express.json());
 app.use(Homeroute);
 app.use(Productroute);
 
-
+mongoose.connect('mongodb://localhost:27017/we16307');
 
 const port = 3001;
 app.listen(port, () => {

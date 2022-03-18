@@ -5,7 +5,8 @@ Homeroute.get("/", (request, response) => {
     response.send(`
     
     <h1>Hom page</h1>
-    <p>bcndd</p>
+    <p>hi , xin chào các bạn 
+    </p>
     
     `);
 });

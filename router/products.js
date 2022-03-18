@@ -2,22 +2,13 @@
 import express from "express";
 import { response } from "express";
 import { request } from "http";
+import { createProduct, deleteProduct, listProduct, listProductDetail, updateProduct } from "../controllers/products";
 const Productroute = express.Router();
-const products = [
-    { id: 1, name: "Việt" },
-    { id: 2, name: "Việt2" }
-]
-Productroute.get("/product", (request, response) => {
-    response.json(products);
-});
-Productroute.get("/product/:id", (request, response) => {
-    const product = products.find(item => item.id === +request.params.id);
-    response.json(product);
-})
-Productroute.post("/product", (request, response) => {
-    products.push(request.body);
-    response.json(products);
-})
+Productroute.get("/product", listProduct);
+Productroute.get("/product/:id", listProductDetail)
+Productroute.post("/product", createProduct);
+Productroute.delete("/product/:id", deleteProduct);
+Productroute.put("/product/:id", updateProduct);
 
 
 
